@@ -103,6 +103,21 @@ public class LinkedListDeque<T> implements Deque<T> {
         return false;
     }
 
+    private T getRecursiveHelper(Node cur, int index) {
+        if (index == 0) {
+            return cur.item;
+        }
+        return getRecursiveHelper(cur.next, index - 1);
+    }
+
+    public T getRecursive(int index) {
+        if (index < 0 || index >= size) {
+            return null;
+        }
+        Node now = this.sentinel.next;
+        return getRecursiveHelper(now, index);
+    }
+
     private class Node {
         private final T item;
         private Node next;

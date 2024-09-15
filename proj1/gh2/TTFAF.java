@@ -24,8 +24,8 @@ public class TTFAF {
         }
 
         // You can also do this:
-        GuitarPlayer player = new GuitarPlayer(new java.io.File("gh2/Never-Gonna-Give-You-Up-3.mid"));
-        player.play();
+        // GuitarPlayer player = new GuitarPlayer(new java.io.File("gh2/Never-Gonna-Give-You-Up-3.mid"));
+        // player.play();
     }
 
     private static final String TTFAF =
