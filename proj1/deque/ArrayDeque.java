@@ -1,6 +1,7 @@
 package deque;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class ArrayDeque<T> implements Deque<T> {
 
@@ -90,7 +91,22 @@ public class ArrayDeque<T> implements Deque<T> {
     }
 
     public Iterator<T> iterator() {
-        return null;
+        return new ArrayDequeIterator();
+    }
+
+    private class ArrayDequeIterator implements Iterator<T> {
+        private int index = 0;
+        public boolean hasNext() {
+            return index < size;
+        }
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            T item = get(index);
+            index = index + 1;
+            return item;
+        }
     }
 
     private int getIndex(int index) {
