@@ -71,6 +71,7 @@ public class BSTMap<K extends Comparable, V>  implements Map61B<K, V>  {
         throw new UnsupportedOperationException();
     }
 
+    // helper function for put
     private Node put(Node node, K key, V value) {
         if(node == null) {
             size++;
